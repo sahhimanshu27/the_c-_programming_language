@@ -1,6 +1,7 @@
 #include <iostream>
 
 void increment(int& value);
+void incementWithoutReference(int value);
 
 int main()
 {
@@ -24,10 +25,18 @@ int main()
     increment(x); // Passing x by reference to increment function
     std::cout << "After incrementing x:" << x << std::endl;
 
+    incementWithoutReference(x); // Passing x by value to increment function
+    std::cout << "After incementWithoutReference x:" << x << std::endl; // x remains unchanged
+
     return 0;
 }
 
 void increment(int& value)
+{
+    value++;
+}
+
+void incementWithoutReference(int value)
 {
     value++;
 }
